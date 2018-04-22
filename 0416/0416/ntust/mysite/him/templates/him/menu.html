@@ -1,0 +1,16 @@
+<h1>自我介紹</h1>
+<hr />
+<table class = "table">
+    <tr>
+        <th>名字</th>
+        <th>生日</th>
+        <th>性別</th>
+    </tr>
+    {% for i in me %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.birthday}}</td>
+        <td>{{i.sex}}</td>
+    </tr>
+    {% endfor %}
+</table>
