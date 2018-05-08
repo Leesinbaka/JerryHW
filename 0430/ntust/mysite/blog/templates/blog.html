@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+	<title>Blog QQ</title>
+	<body>
+		<h1>Blog</h1>
+<div align="right"><a href="/blog/post"><button>New Post</button></a></div><hr>
+	{% for post in post_list %}
+		<div align="right">
+			<a href="/blog/edit?q={{ post.pk }}"><button>edit</button></a>
+			<form action="" method="Post">
+				{% csrf_token %}
+				<input type="hidden" name="pk" value="{{ post.pk }}">
+				<input type="submit" value="delete">
+			</form>
+		</div>
+		<h2>{{post.title}}</h2>
+		<h4>{{post.content}}</h4>
+	{% endfor %}
+</body>
+</head>
