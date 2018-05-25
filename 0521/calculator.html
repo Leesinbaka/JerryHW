@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Calculator</h2>
+
+<p>
+    <button onclick="plus()">+</button>
+    <button onclick="minus()">-</button>
+    <button onclick="multiply()">*</button>
+    <button onclick="divide()">/</button>
+</p>
+
+<input type="number" id="a">
+<br>
+<input type="number" id="b">
+
+<p>計算結果：</p>
+<p id="demo"></p>
+
+<p>
+    <button onclick="c()">clear</button>
+</p>
+
+<script>
+    function plus() {
+	    a=Number(document.getElementById("a").value);
+        b=Number(document.getElementById("b").value);
+        document.getElementById("demo").innerHTML = a+b;
+    }
+    function minus() {
+	    a=Number(document.getElementById("a").value);
+        b=Number(document.getElementById("b").value);
+        document.getElementById("demo").innerHTML = a-b;
+    }
+    function multiply() {
+	    a=Number(document.getElementById("a").value);
+        b=Number(document.getElementById("b").value);
+        document.getElementById("demo").innerHTML = a*b;
+    }
+    function divide() {
+	    a=Number(document.getElementById("a").value);
+        b=Number(document.getElementById("b").value);
+        document.getElementById("demo").innerHTML = a/b;
+    }
+    function c() {
+	    document.getElementById("a").value="0";
+	    document.getElementById("b").value="0";
+        document.getElementById("demo").innerHTML ="0";
+    }
+</script>
+
+</body>
+</html>
