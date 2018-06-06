@@ -4,8 +4,11 @@ from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
-    url(r'^index/',views.index),
-    url(r'^login/$', auth_views.login,name='login'),
-    url(r'^logout/$', auth_views.logout,name='logout'),
+    url(r'^$',views.index),
+    url(r'^index/$',views.index),
+    url(r'^login/$', views.login),
+    url(r'^logout/$', views.logout),
+    url(r'^register/$', views.register),
     url(r'^admin/', admin.site.urls),
+    url(r'^changhua/',views.changhua),
 ]

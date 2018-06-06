@@ -34,9 +34,3 @@ class Restaurants(models.Model):
     worktime = models.CharField(max_length=100,blank=True)
     def __str__(self):
         return self.name
-class Post(models.Model):
-    title = models.CharField(max_length=500)
-    contentforpost = models.CharField(max_length=500)
-    publish_time = models.DateTimeField(auto_now_add=True)
-    def __str__(self):
-        return self.title

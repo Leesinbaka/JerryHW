@@ -1,0 +1,11 @@
+<html>
+    <form action="." method="POST" name="from1">
+        {% csrf_token %}
+        <div>account:<input type="text" name="username" id="username"/></div>
+        <div>password:<input type="password" name="password" id="password"/></div>
+        <div>
+            <input type="submit" name="button" id="button" value="login"/>
+        </div>
+        <span style="color:black">{{message}}</span>
+    </form>
+</html>

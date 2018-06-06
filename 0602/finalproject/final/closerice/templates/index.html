@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>{% block title %}Django Simple Login{% endblock %}</title>
-</head>
-<body>
-  <header>
-    <h1>Django Simple Login</h1>
-    {% if user.is_authenticated %}
-      Hi {{ user.username }}!
-      <a href="{% url 'logout' %}">logout</a>
-    {% else %}
-      <a href="{% url 'login' %}">login</a>
-    {% endif %}
-  </header>
-  <hr>
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
-</body>
+    <head>
+        <meta http-quiv="Content-Type" content="text/html; charset=utf-8">
+        <title>homepage</title>
+    </head>
+    <body>
+        {% if request.user.is_authenticated %}
+            <p>歡迎光臨:{{request.user}}</p>
+            <p><a href ="/closerice/logout/">logout</a></p>
+        {% else %}
+            <p>未登入</p>
+            <a href ="/closerice/login/">login</a>
+            <a href ="/closerice/register/">register</a>
+        {% endif %}
+    </body>
 </html>
