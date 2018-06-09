@@ -1,6 +1,6 @@
 from django.shortcuts import render ,redirect,HttpResponse
 from django.contrib import auth
-from .models import *
+from .models import restaurant
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate
 def login(request):
@@ -11,15 +11,19 @@ def login(request):
         if user is not None:
             if user.is_active:
                 auth.login(request,user)
-                return redirect('/closerice/index/')
                 message='sucess'
+                return redirect('/closerice/index/')
             else:
                 message='nothing here'
         else:
             message='failed'
     return render(request,"login.html",locals())
 
+# def index(request):
+#     haha = restaurant.objects.all()
+#     return render(request,"index.html",{'haha': haha})
 def index(request):
+
     return render(request,"index.html",locals())
 
 def logout(request):
@@ -36,5 +40,9 @@ def register(request):
         form = UserCreationForm()
     return render(request,"register.html",locals())
 
-def changhua(request):
-    return render(request,"changhua.html")
+def taipei_1(request):
+    return render(request,"taipei_1.html")
+
+def haha(request):
+    rest = restaurant.objects.all()
+    return render(request,"haha.html",{"rest":rest})
